@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="TaxCal.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:TaxCal"
+    Title="{Binding Title}">
+
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+
+        <StackLayout Orientation="Vertical">
+            <Label Text="{Binding Price, StringFormat='{0} Yen'}" />
+            <Entry Text="{Binding Price}" WidthRequest="200" />
+        </StackLayout>
+        <StackLayout Orientation="Vertical">
+            <Label Text="{Binding Percent, StringFormat='{0}%'}" />
+            <Slider
+                Maximum="100"
+                Minimum="1"
+                WidthRequest="200"
+                Value="{Binding Percent, Mode=TwoWay}" />
+        </StackLayout>
+        <Label Text="{Binding Total, StringFormat='{0} Yen'}" />
+
+        <!--  Place new controls here  -->
+        <Button Command="{Binding GoToNext}" Text="Next" />
+    </StackLayout>
+
+</ContentPage>
